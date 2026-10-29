@@ -1,0 +1,744 @@
+{
+  "tools": [
+    {
+      "name": "search_cities",
+      "title": "Find the right city",
+      "description": "Search available cities by name and country. Results include stable IDs and IANA time zones.",
+      "inputSchema": {
+        "type": "object",
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "properties": {
+          "query": {
+            "type": "string",
+            "minLength": 2,
+            "maxLength": 100
+          },
+          "country": {
+            "type": "string",
+            "pattern": "^[a-zA-Z]{2}$"
+          },
+          "limit": {
+            "default": 8,
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 20
+          }
+        },
+        "required": [
+          "query"
+        ],
+        "additionalProperties": false
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "list_calculation_methods",
+      "title": "Explore calculation methods",
+      "description": "List the actual presets supported by the shared prayer engine, with their settings.",
+      "inputSchema": {
+        "type": "object",
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "properties": {},
+        "additionalProperties": false
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "get_prayer_times",
+      "title": "Calculate prayer times",
+      "description": "Get up to seven days of calculated prayer start times, sunrise, settings and warnings.",
+      "inputSchema": {
+        "type": "object",
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "properties": {
+          "city_id": {
+            "type": "integer",
+            "exclusiveMinimum": 0,
+            "maximum": 2147483647
+          },
+          "date": {
+            "type": "string"
+          },
+          "method": {
+            "type": "string",
+            "enum": [
+              "mwl",
+              "egypt",
+              "karachi",
+              "makkah",
+              "isna",
+              "emirates",
+              "dubai",
+              "qatar",
+              "kuwait",
+              "oman",
+              "omanMuscat",
+              "jordan",
+              "palestine",
+              "syria",
+              "iraq",
+              "morocco",
+              "azrou",
+              "algeria",
+              "tunisia",
+              "libya",
+              "sudan",
+              "turkey",
+              "malaysia",
+              "malaysia2",
+              "indonesia",
+              "kazakhstan",
+              "tajikistan",
+              "maldives",
+              "southkorea",
+              "uoif",
+              "paris",
+              "toulouse",
+              "lyon",
+              "orleans",
+              "moscow",
+              "czech",
+              "switzerland",
+              "fribourg",
+              "belgium",
+              "luxembourg",
+              "austria",
+              "london",
+              "birmingham",
+              "blackburn",
+              "aachen",
+              "munchen",
+              "potsdam",
+              "nurnberg",
+              "rotterdam",
+              "dordrecht",
+              "eindhoven",
+              "montreal",
+              "windsor",
+              "calgary",
+              "mississauga"
+            ]
+          },
+          "asr_rule": {
+            "default": "shafi",
+            "type": "string",
+            "enum": [
+              "shafi",
+              "hanafi"
+            ]
+          },
+          "high_latitude": {
+            "default": "automatic",
+            "type": "string",
+            "enum": [
+              "automatic",
+              "none",
+              "middleOfTheNight",
+              "seventhOfTheNight",
+              "twilightAngle"
+            ]
+          },
+          "ramadan": {
+            "default": false,
+            "type": "boolean"
+          },
+          "adjustments": {
+            "type": "object",
+            "properties": {
+              "fajr": {
+                "type": "integer",
+                "minimum": -60,
+                "maximum": 60
+              },
+              "dhuhr": {
+                "type": "integer",
+                "minimum": -60,
+                "maximum": 60
+              },
+              "asr": {
+                "type": "integer",
+                "minimum": -60,
+                "maximum": 60
+              },
+              "maghrib": {
+                "type": "integer",
+                "minimum": -60,
+                "maximum": 60
+              },
+              "isha": {
+                "type": "integer",
+                "minimum": -60,
+                "maximum": 60
+              }
+            },
+            "additionalProperties": false
+          },
+          "days": {
+            "default": 1,
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 7
+          }
+        },
+        "required": [
+          "city_id",
+          "date"
+        ],
+        "additionalProperties": false
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "compare_prayer_methods",
+      "title": "Compare methods fairly",
+      "description": "Compare all five prayers with the same city, date, Asr rule and adjustments.",
+      "inputSchema": {
+        "type": "object",
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "properties": {
+          "city_id": {
+            "type": "integer",
+            "exclusiveMinimum": 0,
+            "maximum": 2147483647
+          },
+          "date": {
+            "type": "string"
+          },
+          "method": {
+            "type": "string",
+            "enum": [
+              "mwl",
+              "egypt",
+              "karachi",
+              "makkah",
+              "isna",
+              "emirates",
+              "dubai",
+              "qatar",
+              "kuwait",
+              "oman",
+              "omanMuscat",
+              "jordan",
+              "palestine",
+              "syria",
+              "iraq",
+              "morocco",
+              "azrou",
+              "algeria",
+              "tunisia",
+              "libya",
+              "sudan",
+              "turkey",
+              "malaysia",
+              "malaysia2",
+              "indonesia",
+              "kazakhstan",
+              "tajikistan",
+              "maldives",
+              "southkorea",
+              "uoif",
+              "paris",
+              "toulouse",
+              "lyon",
+              "orleans",
+              "moscow",
+              "czech",
+              "switzerland",
+              "fribourg",
+              "belgium",
+              "luxembourg",
+              "austria",
+              "london",
+              "birmingham",
+              "blackburn",
+              "aachen",
+              "munchen",
+              "potsdam",
+              "nurnberg",
+              "rotterdam",
+              "dordrecht",
+              "eindhoven",
+              "montreal",
+              "windsor",
+              "calgary",
+              "mississauga"
+            ]
+          },
+          "asr_rule": {
+            "default": "shafi",
+            "type": "string",
+            "enum": [
+              "shafi",
+              "hanafi"
+            ]
+          },
+          "high_latitude": {
+            "default": "automatic",
+            "type": "string",
+            "enum": [
+              "automatic",
+              "none",
+              "middleOfTheNight",
+              "seventhOfTheNight",
+              "twilightAngle"
+            ]
+          },
+          "ramadan": {
+            "default": false,
+            "type": "boolean"
+          },
+          "adjustments": {
+            "type": "object",
+            "properties": {
+              "fajr": {
+                "type": "integer",
+                "minimum": -60,
+                "maximum": 60
+              },
+              "dhuhr": {
+                "type": "integer",
+                "minimum": -60,
+                "maximum": 60
+              },
+              "asr": {
+                "type": "integer",
+                "minimum": -60,
+                "maximum": 60
+              },
+              "maghrib": {
+                "type": "integer",
+                "minimum": -60,
+                "maximum": 60
+              },
+              "isha": {
+                "type": "integer",
+                "minimum": -60,
+                "maximum": 60
+              }
+            },
+            "additionalProperties": false
+          },
+          "method_a": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 80
+          },
+          "method_b": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 80
+          }
+        },
+        "required": [
+          "city_id",
+          "date",
+          "method_a",
+          "method_b"
+        ],
+        "additionalProperties": false
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "get_qibla",
+      "title": "Find Qibla direction",
+      "description": "Get the initial bearing towards the Kaaba, measured clockwise from true north.",
+      "inputSchema": {
+        "type": "object",
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "properties": {
+          "city_id": {
+            "type": "integer",
+            "exclusiveMinimum": 0,
+            "maximum": 2147483647
+          }
+        },
+        "required": [
+          "city_id"
+        ],
+        "additionalProperties": false
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "convert_calendar",
+      "title": "Convert calendar dates",
+      "description": "Convert Hijri and Gregorian dates in either direction with an explicit calendar method.",
+      "inputSchema": {
+        "type": "object",
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "properties": {
+          "direction": {
+            "type": "string",
+            "enum": [
+              "gregorian-to-hijri",
+              "hijri-to-gregorian"
+            ]
+          },
+          "date": {
+            "type": "string"
+          },
+          "hijri": {
+            "type": "object",
+            "properties": {
+              "year": {
+                "type": "integer",
+                "minimum": 1300,
+                "maximum": 1600
+              },
+              "month": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 12
+              },
+              "day": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 30
+              }
+            },
+            "required": [
+              "year",
+              "month",
+              "day"
+            ],
+            "additionalProperties": false
+          },
+          "method": {
+            "default": "islamic-umalqura",
+            "type": "string",
+            "enum": [
+              "islamic-umalqura",
+              "islamic-civil"
+            ]
+          },
+          "adjustment": {
+            "default": 0,
+            "type": "integer",
+            "minimum": -2,
+            "maximum": 2
+          }
+        },
+        "required": [
+          "direction"
+        ],
+        "additionalProperties": false
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "get_calendar_month",
+      "title": "Plan with both calendars",
+      "description": "Get a Hijri or Gregorian month with corresponding dates in the other calendar.",
+      "inputSchema": {
+        "type": "object",
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "properties": {
+          "calendar": {
+            "type": "string",
+            "enum": [
+              "hijri",
+              "gregorian"
+            ]
+          },
+          "year": {
+            "type": "integer",
+            "minimum": 1300,
+            "maximum": 2100
+          },
+          "month": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 12
+          },
+          "method": {
+            "default": "islamic-umalqura",
+            "type": "string",
+            "enum": [
+              "islamic-umalqura",
+              "islamic-civil"
+            ]
+          },
+          "adjustment": {
+            "default": 0,
+            "type": "integer",
+            "minimum": -2,
+            "maximum": 2
+          }
+        },
+        "required": [
+          "calendar",
+          "year",
+          "month"
+        ],
+        "additionalProperties": false
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "list_islamic_days",
+      "title": "Look ahead to Islamic days",
+      "description": "List calculated planning dates, with local moon-sighting and observance qualifications.",
+      "inputSchema": {
+        "type": "object",
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "properties": {
+          "gregorian_year": {
+            "type": "integer",
+            "minimum": 1900,
+            "maximum": 2100
+          },
+          "method": {
+            "default": "islamic-umalqura",
+            "type": "string",
+            "enum": [
+              "islamic-umalqura",
+              "islamic-civil"
+            ]
+          },
+          "adjustment": {
+            "default": 0,
+            "type": "integer",
+            "minimum": -2,
+            "maximum": 2
+          }
+        },
+        "required": [
+          "gregorian_year"
+        ],
+        "additionalProperties": false
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "convert_timezone",
+      "title": "Convert a moment in time",
+      "description": "Convert an unambiguous timestamp to another IANA time zone, including daylight saving.",
+      "inputSchema": {
+        "type": "object",
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "properties": {
+          "instant": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$"
+          },
+          "time_zone": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100
+          }
+        },
+        "required": [
+          "instant",
+          "time_zone"
+        ],
+        "additionalProperties": false
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "generate_timetable",
+      "title": "Export a useful timetable",
+      "description": "Create a CSV or ICS file for up to 32 days, with the city and calculation settings attached.",
+      "inputSchema": {
+        "type": "object",
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "properties": {
+          "city_id": {
+            "type": "integer",
+            "exclusiveMinimum": 0,
+            "maximum": 2147483647
+          },
+          "date": {
+            "type": "string"
+          },
+          "method": {
+            "type": "string",
+            "enum": [
+              "mwl",
+              "egypt",
+              "karachi",
+              "makkah",
+              "isna",
+              "emirates",
+              "dubai",
+              "qatar",
+              "kuwait",
+              "oman",
+              "omanMuscat",
+              "jordan",
+              "palestine",
+              "syria",
+              "iraq",
+              "morocco",
+              "azrou",
+              "algeria",
+              "tunisia",
+              "libya",
+              "sudan",
+              "turkey",
+              "malaysia",
+              "malaysia2",
+              "indonesia",
+              "kazakhstan",
+              "tajikistan",
+              "maldives",
+              "southkorea",
+              "uoif",
+              "paris",
+              "toulouse",
+              "lyon",
+              "orleans",
+              "moscow",
+              "czech",
+              "switzerland",
+              "fribourg",
+              "belgium",
+              "luxembourg",
+              "austria",
+              "london",
+              "birmingham",
+              "blackburn",
+              "aachen",
+              "munchen",
+              "potsdam",
+              "nurnberg",
+              "rotterdam",
+              "dordrecht",
+              "eindhoven",
+              "montreal",
+              "windsor",
+              "calgary",
+              "mississauga"
+            ]
+          },
+          "asr_rule": {
+            "default": "shafi",
+            "type": "string",
+            "enum": [
+              "shafi",
+              "hanafi"
+            ]
+          },
+          "high_latitude": {
+            "default": "automatic",
+            "type": "string",
+            "enum": [
+              "automatic",
+              "none",
+              "middleOfTheNight",
+              "seventhOfTheNight",
+              "twilightAngle"
+            ]
+          },
+          "ramadan": {
+            "default": false,
+            "type": "boolean"
+          },
+          "adjustments": {
+            "type": "object",
+            "properties": {
+              "fajr": {
+                "type": "integer",
+                "minimum": -60,
+                "maximum": 60
+              },
+              "dhuhr": {
+                "type": "integer",
+                "minimum": -60,
+                "maximum": 60
+              },
+              "asr": {
+                "type": "integer",
+                "minimum": -60,
+                "maximum": 60
+              },
+              "maghrib": {
+                "type": "integer",
+                "minimum": -60,
+                "maximum": 60
+              },
+              "isha": {
+                "type": "integer",
+                "minimum": -60,
+                "maximum": 60
+              }
+            },
+            "additionalProperties": false
+          },
+          "days": {
+            "default": 31,
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 32
+          },
+          "format": {
+            "default": "csv",
+            "type": "string",
+            "enum": [
+              "csv",
+              "ics"
+            ]
+          }
+        },
+        "required": [
+          "city_id",
+          "date"
+        ],
+        "additionalProperties": false
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    }
+  ]
+}

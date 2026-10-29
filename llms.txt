@@ -1,0 +1,16 @@
+# AL-Naqawa reference
+
+> Public documentation and dated examples for AL-Naqawa web prayer tools and its beta MCP service. This file is an optional navigation aid, not an AI inclusion requirement.
+
+- [Overview](README.md)
+- [Connection guide](docs/mcp-quickstart.md)
+- [Tool reference](docs/tool-reference.md)
+- [Prayer-time differences](docs/prayer-time-differences.md)
+- [Timetable exports](docs/timetable-export.md)
+- [FAQ](docs/faq.md)
+- [Glossary](docs/glossary.md)
+- [Examples](examples/README.md)
+- [Project facts](reference/project-facts.json)
+- [Sources](docs/sources.md)
+
+Calculated starts are not mosque congregation schedules. Keep dates, locations, settings and warnings attached to results. No released app or physical clock is represented by this repository.

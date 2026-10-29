@@ -1,0 +1,33 @@
+{
+  "name": "AL-Naqawa",
+  "website": "https://alnaqawa.com/en",
+  "reference_repository": "https://github.com/idonen/ALNaqawa",
+  "checked_date": "2026-10-30",
+  "description": "Web prayer-time tools and a public beta MCP service for compatible AI clients.",
+  "mcp": {
+    "url": "https://alnaqawa.com/mcp",
+    "transport": "streamable-http",
+    "status": "public beta",
+    "api_key_required_at_check": false,
+    "tool_count_at_check": 10,
+    "schema_snapshot": "tools-2026-10-30.json"
+  },
+  "product_status": {
+    "web_tools": "available",
+    "mobile_app": "in development",
+    "physical_clock": "planned; not for sale"
+  },
+  "interpretation": [
+    "Calculated prayer starts, not mosque Iqamah or Jumuah schedules.",
+    "Calendar labels are planning calculations, not local moon-sighting announcements.",
+    "Qibla is an initial true-north bearing, not a live sensor compass.",
+    "Timetable generation does not set alarms or import calendar events.",
+    "Published city coverage is incomplete; confirm location through search."
+  ],
+  "sources": [
+    "https://alnaqawa.com/en/about",
+    "https://alnaqawa.com/en/mcp",
+    "https://alnaqawa.com/skills/al-naqawa-prayer/SKILL.md"
+  ],
+  "verification_scope": "Product statements follow the current public sources; six read-only example requests were checked. No independent astronomical accuracy study was performed."
+}

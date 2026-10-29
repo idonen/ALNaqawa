@@ -1,0 +1,9 @@
+{
+  "city_id": 58153,
+  "date": "2026-11-01",
+  "method": "mwl",
+  "asr_rule": "shafi",
+  "high_latitude": "automatic",
+  "days": 3,
+  "format": "csv"
+}

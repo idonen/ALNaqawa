@@ -1,0 +1,57 @@
+{
+  "checked_date": "2026-10-30",
+  "tool": "search_cities",
+  "arguments": {
+    "query": "London",
+    "country": "GB",
+    "limit": 5
+  },
+  "response": {
+    "items": [
+      {
+        "id": 58153,
+        "name": "London",
+        "name_ar": "لندن",
+        "name_fr": "Londres",
+        "latitude": 51.50853,
+        "longitude": -0.12574,
+        "country_code": "GB",
+        "country": "United Kingdom",
+        "altitude": 25,
+        "timezone": "Europe/London",
+        "method": "london",
+        "slug": "london-58153"
+      },
+      {
+        "id": 58205,
+        "name": "City of London",
+        "name_ar": "لندن",
+        "name_fr": "City of London",
+        "latitude": 51.51279,
+        "longitude": -0.09184,
+        "country_code": "GB",
+        "country": "United Kingdom",
+        "altitude": 27,
+        "timezone": "Europe/London",
+        "method": "london",
+        "slug": "city-of-london-58205"
+      },
+      {
+        "id": 58098,
+        "name": "Londonderry County Borough",
+        "name_ar": "مقاطعة لندنديري بورو",
+        "name_fr": "Londonderry County Borough",
+        "latitude": 54.99721,
+        "longitude": -7.30917,
+        "country_code": "GB",
+        "country": "United Kingdom",
+        "altitude": 24,
+        "timezone": "Europe/London",
+        "method": "mwl",
+        "slug": "londonderry-county-borough-58098"
+      }
+    ],
+    "source": "dataDB.db / cities",
+    "note": "Search covers currently published records. Match country and IANA time zone before choosing a city ID."
+  }
+}

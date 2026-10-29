@@ -1,0 +1,49 @@
+{
+  "checked_date": "2026-10-30",
+  "tool": "generate_timetable",
+  "arguments": {
+    "city_id": 58153,
+    "date": "2026-11-01",
+    "method": "mwl",
+    "asr_rule": "shafi",
+    "high_latitude": "automatic",
+    "days": 3,
+    "format": "csv"
+  },
+  "response": {
+    "file_name": "al-naqawa-58153-2026-11-01.csv",
+    "mime_type": "text/csv",
+    "city": {
+      "id": 58153,
+      "name": "London",
+      "name_ar": "لندن",
+      "name_fr": "Londres",
+      "latitude": 51.50853,
+      "longitude": -0.12574,
+      "country_code": "GB",
+      "country": "United Kingdom",
+      "altitude": 25,
+      "timezone": "Europe/London",
+      "method": "london",
+      "slug": "london-58153"
+    },
+    "settings": {
+      "method": "mwl",
+      "asr_rule": "shafi",
+      "high_latitude": "automatic",
+      "ramadan": false,
+      "adjustments": {
+        "fajr": 0,
+        "dhuhr": 0,
+        "asr": 0,
+        "maghrib": 0,
+        "isha": 0
+      }
+    },
+    "warnings": [],
+    "notes": [
+      "Times are calculated prayer start times, not mosque Iqamah or Jumuah schedules.",
+      "Local methods and mosque timetables may differ."
+    ]
+  }
+}

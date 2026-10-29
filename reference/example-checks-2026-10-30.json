@@ -1,0 +1,47 @@
+{
+  "checked_date": "2026-10-30",
+  "scope": "Read-only calls to the public beta endpoint; not independent accuracy validation.",
+  "checks": [
+    {
+      "example": "search-london",
+      "tool": "search_cities",
+      "checked_date": "2026-10-30",
+      "exit_code": 0
+    },
+    {
+      "example": "methods",
+      "tool": "list_calculation_methods",
+      "checked_date": "2026-10-30",
+      "exit_code": 0,
+      "result_shape": [
+        "items",
+        "count",
+        "engine"
+      ]
+    },
+    {
+      "example": "prayer-london",
+      "tool": "get_prayer_times",
+      "checked_date": "2026-10-30",
+      "exit_code": 0
+    },
+    {
+      "example": "compare-london",
+      "tool": "compare_prayer_methods",
+      "checked_date": "2026-10-30",
+      "exit_code": 0
+    },
+    {
+      "example": "timezone-new-york",
+      "tool": "convert_timezone",
+      "checked_date": "2026-10-30",
+      "exit_code": 0
+    },
+    {
+      "example": "timetable-london",
+      "tool": "generate_timetable",
+      "checked_date": "2026-10-30",
+      "exit_code": 0
+    }
+  ]
+}

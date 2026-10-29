@@ -1,0 +1,232 @@
+{
+  "checked_date": "2026-10-30",
+  "tool": "compare_prayer_methods",
+  "arguments": {
+    "city_id": 58153,
+    "date": "2026-11-01",
+    "method_a": "mwl",
+    "method_b": "isna",
+    "asr_rule": "shafi",
+    "high_latitude": "automatic"
+  },
+  "response": {
+    "a": {
+      "days": [
+        {
+          "date": "2026-11-01",
+          "utc_offset_seconds": 0,
+          "fajr": {
+            "time": "05:00",
+            "local": "2026-11-01T05:00:00.000",
+            "utc": "2026-11-01T05:00:00.000Z",
+            "epoch": 1793509200000
+          },
+          "sunrise": {
+            "time": "06:54",
+            "local": "2026-11-01T06:54:00.000",
+            "utc": "2026-11-01T06:54:00.000Z",
+            "epoch": 1793516040000
+          },
+          "dhuhr": {
+            "time": "11:44",
+            "local": "2026-11-01T11:44:00.000",
+            "utc": "2026-11-01T11:44:00.000Z",
+            "epoch": 1793533440000
+          },
+          "asr": {
+            "time": "14:06",
+            "local": "2026-11-01T14:06:00.000",
+            "utc": "2026-11-01T14:06:00.000Z",
+            "epoch": 1793541960000
+          },
+          "maghrib": {
+            "time": "16:33",
+            "local": "2026-11-01T16:33:00.000",
+            "utc": "2026-11-01T16:33:00.000Z",
+            "epoch": 1793550780000
+          },
+          "isha": {
+            "time": "18:20",
+            "local": "2026-11-01T18:20:00.000",
+            "utc": "2026-11-01T18:20:00.000Z",
+            "epoch": 1793557200000
+          },
+          "sunset": {
+            "time": "16:33",
+            "local": "2026-11-01T16:33:00.000",
+            "utc": "2026-11-01T16:33:00.000Z",
+            "epoch": 1793550780000
+          }
+        }
+      ],
+      "parameters": {
+        "key": "mwl",
+        "name": "muslim World League",
+        "fajr_angle": 18,
+        "isha_value": 17,
+        "isha_is_interval": false,
+        "maghrib_value": 0,
+        "maghrib_is_interval": true,
+        "offsets": {
+          "fajr": 0,
+          "dhuhr": 0,
+          "asr": 0,
+          "maghrib": 0,
+          "isha": 0
+        }
+      },
+      "engine": "prayer_time_plus / local source",
+      "city": {
+        "id": 58153,
+        "name": "London",
+        "name_ar": "لندن",
+        "name_fr": "Londres",
+        "latitude": 51.50853,
+        "longitude": -0.12574,
+        "country_code": "GB",
+        "country": "United Kingdom",
+        "altitude": 25,
+        "timezone": "Europe/London",
+        "method": "london",
+        "slug": "london-58153"
+      },
+      "method": "mwl",
+      "madhab": "shafi",
+      "high_latitude": "automatic",
+      "ramadan": false,
+      "adjustments": {
+        "fajr": 0,
+        "dhuhr": 0,
+        "asr": 0,
+        "maghrib": 0,
+        "isha": 0
+      },
+      "date": "2026-11-01",
+      "generated_at": "2026-10-29T17:12:13.074Z",
+      "source": {
+        "engine": "prayer_time_plus",
+        "city_data": "dataDB.db / cities",
+        "timezone": "IANA / Workers Intl",
+        "kind": "astronomical calculation"
+      },
+      "notes": [
+        "Times are calculated prayer start times, not mosque Iqamah or Jumuah schedules.",
+        "Local methods and mosque timetables may differ."
+      ],
+      "warnings": []
+    },
+    "b": {
+      "days": [
+        {
+          "date": "2026-11-01",
+          "utc_offset_seconds": 0,
+          "fajr": {
+            "time": "05:20",
+            "local": "2026-11-01T05:20:00.000",
+            "utc": "2026-11-01T05:20:00.000Z",
+            "epoch": 1793510400000
+          },
+          "sunrise": {
+            "time": "06:54",
+            "local": "2026-11-01T06:54:00.000",
+            "utc": "2026-11-01T06:54:00.000Z",
+            "epoch": 1793516040000
+          },
+          "dhuhr": {
+            "time": "11:44",
+            "local": "2026-11-01T11:44:00.000",
+            "utc": "2026-11-01T11:44:00.000Z",
+            "epoch": 1793533440000
+          },
+          "asr": {
+            "time": "14:06",
+            "local": "2026-11-01T14:06:00.000",
+            "utc": "2026-11-01T14:06:00.000Z",
+            "epoch": 1793541960000
+          },
+          "maghrib": {
+            "time": "16:33",
+            "local": "2026-11-01T16:33:00.000",
+            "utc": "2026-11-01T16:33:00.000Z",
+            "epoch": 1793550780000
+          },
+          "isha": {
+            "time": "18:08",
+            "local": "2026-11-01T18:08:00.000",
+            "utc": "2026-11-01T18:08:00.000Z",
+            "epoch": 1793556480000
+          },
+          "sunset": {
+            "time": "16:33",
+            "local": "2026-11-01T16:33:00.000",
+            "utc": "2026-11-01T16:33:00.000Z",
+            "epoch": 1793550780000
+          }
+        }
+      ],
+      "parameters": {
+        "key": "isna",
+        "name": "north America",
+        "fajr_angle": 15,
+        "isha_value": 15,
+        "isha_is_interval": false,
+        "maghrib_value": 0,
+        "maghrib_is_interval": true,
+        "offsets": {
+          "fajr": 0,
+          "dhuhr": 0,
+          "asr": 0,
+          "maghrib": 0,
+          "isha": 0
+        }
+      },
+      "engine": "prayer_time_plus / local source",
+      "city": {
+        "id": 58153,
+        "name": "London",
+        "name_ar": "لندن",
+        "name_fr": "Londres",
+        "latitude": 51.50853,
+        "longitude": -0.12574,
+        "country_code": "GB",
+        "country": "United Kingdom",
+        "altitude": 25,
+        "timezone": "Europe/London",
+        "method": "london",
+        "slug": "london-58153"
+      },
+      "method": "isna",
+      "madhab": "shafi",
+      "high_latitude": "automatic",
+      "ramadan": false,
+      "adjustments": {
+        "fajr": 0,
+        "dhuhr": 0,
+        "asr": 0,
+        "maghrib": 0,
+        "isha": 0
+      },
+      "date": "2026-11-01",
+      "generated_at": "2026-10-29T17:12:13.060Z",
+      "source": {
+        "engine": "prayer_time_plus",
+        "city_data": "dataDB.db / cities",
+        "timezone": "IANA / Workers Intl",
+        "kind": "astronomical calculation"
+      },
+      "notes": [
+        "Times are calculated prayer start times, not mosque Iqamah or Jumuah schedules.",
+        "Local methods and mosque timetables may differ."
+      ],
+      "warnings": []
+    },
+    "difference_minutes": {
+      "fajr": 20,
+      "dhuhr": 0,
+      "asr": 0,
+      "maghrib": 0,
+      "isha": -12
+    },
+    "note": "Same city, date, Asr rule and adjustments. No method is declared religiously preferable."
+  }
+}
